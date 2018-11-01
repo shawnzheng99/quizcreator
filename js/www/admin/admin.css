@@ -1,0 +1,68 @@
+.border-q{
+    border-bottom: 2px dashed orange;
+    padding: 5px;
+    margin: 2px;
+}
+.err-q{
+    border:3px dashed red;
+    padding: 3px;
+    margin: 2px;
+}
+.title{
+    text-align: center;
+    border-bottom: 1px solid grey;
+}
+.action-btns{
+    margin-top: 15px;
+}
+.space-right{
+    margin-right: 5px;
+}
+.margin{
+    margin: 3px;
+}
+.txt-border{
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 100%;
+}
+.option-border{
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 90%;
+}
+.btn-add{
+    /* margin-left: 15%; */
+    margin-right: 15%;
+    width: 25%;
+    margin-bottom: 20px;
+}
+.btn-hard{
+    margin-top:8px;
+    margin-right: 15%;
+    width: 25%;
+    margin-bottom: 10px;
+}
+.btn-easy{
+    margin-top:8px;
+    margin-left: 15%;
+    width: 25%;
+    margin-bottom: 10px;
+}
+.btn-save{
+    margin-left: 15%;
+    width: 25%;
+    margin-bottom: 20px;
+}
+.rdo-center{
+    text-align: center;
+}
+.dis-msg{
+    text-align: center;
+    border:1px solid rgb(244,128,36);
+    background-color: rgb(255,248,220);
+}
+.corr-idx{
+    background-color: rgb(175, 246, 154);
+}
+

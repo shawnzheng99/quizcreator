@@ -1,0 +1,17 @@
+{
+  "name": "lab5-backend",
+  "version": "1.0.0",
+  "description": "backend for lab5 quiz creator",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "knex": "^0.15.2",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ZhengC",
+  "license": "ISC"
+}
