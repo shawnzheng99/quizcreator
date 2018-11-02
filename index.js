@@ -47,5 +47,17 @@ function regiWin(){
 	let pwdLbl = $('<label for="loginPwd">Confirm your password:</label>');
 	let pwdIpt = $('<input type="password" class="form-control" id="loginPwd" placeholder="Password" required>');
 	pwdDiv.append(pwdLbl, pwdIpt);
-	$('#regi').append(pwdDiv);
+	// rdo btn for type of user
+	let rdoDiv = $('<div id="rdoRegi">') // show err id
+	let rdoDivAdmin = $('<div class="form-check form-check-inline">');
+	let rdoIptAdmin = $('<input class="form-check-input" type="radio" name="rdoTypeUser" id="rdoAmin" value="admin">');
+	let rdoLblAdmin = $('<label class="form-check-label" for="rdoAmin">Admin</label>');
+	let rdoDivUser = $('<div class="form-check form-check-inline">');
+	let rdoIptUser = $('<input class="form-check-input" type="radio" name="rdoTypeUser" id="rdoUser" value="user">');
+	let rdoLblUser = $('<label class="form-check-label" for="rdoTypeUser">User</label>');
+	rdoDivAdmin.append(rdoIptAdmin, rdoLblAdmin);
+	rdoDivUser.append(rdoIptUser, rdoLblUser);
+	rdoDiv.append(rdoDivAdmin, rdoDivUser);
+	
+	$('#regi').append(pwdDiv, rdoDiv);
 }
