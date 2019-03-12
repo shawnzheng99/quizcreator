@@ -5,7 +5,7 @@
  * 
  * 
  *  */ 
-const isFirebase = true;
+const isFirebase = false;
 const configFirebase = {
     // firebase cridentials 
   };
