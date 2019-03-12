@@ -70,7 +70,7 @@
             [curDate]: qstdata // use current date as key, the original questions will be overwritten
         })
         .then(docRef =>{
-           // console.log('doc from firestore===>', docRef)
+            console.log('Quiz saved to Firestore');
         }).catch(e=>{
             console.error('fireStore err===>', e);
         })
@@ -93,5 +93,4 @@
      let curr = new Date();
      let month = curr.getMonth() + 1;
      return ''+curr.getFullYear()+ month + curr.getDate();
-
  }

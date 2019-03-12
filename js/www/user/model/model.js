@@ -3,6 +3,8 @@
  */
 var errs = [];
 var userAnswer = [];
+// firebase init
+const db = firebase.firestore();
 
 // init the page
 function init(){
@@ -15,29 +17,63 @@ function init(){
     })
 }
 
+function currDate(){
+    let curr = new Date();
+    let month = curr.getMonth() + 1;
+    return ''+curr.getFullYear()+ month + curr.getDate();
+}
+
 // get question from db
-function loadFromDb(cb){
-    const url = '/qs/getq';
-    let data = {
-        tag: userChioce
-    };
-    $.get(url, data, (data, status) =>{
-        console.log("data incoming from db: ", data);
-        if(status != "success"){
-            console.log("check connection: ", status);
-        }
-        for(let i = 0; i < data.length; ++i){
-            let option = JSON.parse(data[i].answers);
-            qstArr[i] = {
-                body: data[i].body,
-                asrs: option,
-                idx: data[i].correct,
-                tag: data[i].tag
-            };
-        }
-        cb(); // callback in a callback
-    });
-    
+function loadFromDb(cb){   
+    if(isFirebase){
+        db.collection('qsts').doc('uid')
+        .get()
+        .then(doc=>{
+            if(doc.exists){
+                let curDate = currDate();
+                let data = doc.data()[curDate];
+                for(let i = 0; i < data.length; ++i){
+                    if(data[i].tag === userChioce){
+                        let option = JSON.parse(data[i].options);
+                        qstArr.push({
+                            body: data[i].body,
+                            asrs: option,
+                            idx: data[i].idx,
+                            tag: data[i].tag
+                        });
+                    }
+                }
+               
+            }else{
+                console.log('no qs found');
+            }
+            cb();
+        })
+        .catch(e=>{
+            console.error('firestore err===>', e);
+        });
+    }else{
+        const url = '/qs/getq';
+        let data = {
+            tag: userChioce
+        };
+        $.get(url, data, (data, status) =>{
+            console.log("data incoming from db: ", data);
+            if(status != "success"){
+                console.log("check connection: ", status);
+            }
+            for(let i = 0; i < data.length; ++i){
+                let option = JSON.parse(data[i].answers);
+                qstArr[i] = {
+                    body: data[i].body,
+                    asrs: option,
+                    idx: data[i].correct,
+                    tag: data[i].tag
+                };
+            }
+            cb(); // callback in a callback
+        });
+    }
 }
 
 // load questions
