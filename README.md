@@ -1,5 +1,7 @@
 # Quiz Creator
 Project for demonstrate MVC design pattern.
+This is MySql version.
+Firebase version please check firebase branch.
 
 ## Usage:
 1. install MAMP for Mac, WAMP for Windows.
