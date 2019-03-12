@@ -58,6 +58,6 @@ function regiWin(){
 	rdoDivAdmin.append(rdoIptAdmin, rdoLblAdmin);
 	rdoDivUser.append(rdoIptUser, rdoLblUser);
 	rdoDiv.append(rdoDivAdmin, rdoDivUser);
-	
+	// append to regi div
 	$('#regi').append(pwdDiv, rdoDiv);
 }
