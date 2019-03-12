@@ -20,6 +20,7 @@ app.use('/qs', qsts);
 // host frontend
 app.use(express.static(__dirname + '/www'));
 
+
 //---------errs---------
 app.use((req, res, next) => {
     res.status(404).json({
